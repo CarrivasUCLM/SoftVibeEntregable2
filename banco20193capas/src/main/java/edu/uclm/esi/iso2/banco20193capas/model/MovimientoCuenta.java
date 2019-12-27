@@ -11,6 +11,33 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class MovimientoCuenta {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Cuenta getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public double getImporte() {
+        return importe;
+    }
+
+    public void setImporte(double importe) {
+        this.importe = importe;
+    }
+
+    public String getConcepto() {
+        return concepto;
+    }
+
+    public void setConcepto(String concepto) {
+        this.concepto = concepto;
+    }
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@ManyToOne

@@ -37,6 +37,7 @@ public class Cliente {
         return id;
     }
 
+
     public void setId(final Long id) {
         this.id = id;
     }
@@ -44,6 +45,7 @@ public class Cliente {
     public String getNif() {
         return nif;
     }
+
 
     public void setNif(final String nif) {
         this.nif = nif;
@@ -60,6 +62,7 @@ public class Cliente {
     public String getApellidos() {
         return apellidos;
     }
+
 
     public void setApellidos(final String apellidos) {
         this.apellidos = apellidos;

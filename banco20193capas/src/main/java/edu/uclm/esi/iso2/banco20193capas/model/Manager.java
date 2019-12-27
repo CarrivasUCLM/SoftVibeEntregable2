@@ -15,6 +15,7 @@ import edu.uclm.esi.iso2.banco20193capas.dao.TarjetaDebitoDAO;
  *
  */
 @Component
+
 public final class Manager {
     private static CuentaDAO cuentaDAO;
     private static MovimientoCuentaDAO movimientoDAO;
