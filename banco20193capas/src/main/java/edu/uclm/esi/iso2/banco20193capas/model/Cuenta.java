@@ -197,25 +197,19 @@ public class Cuenta {
 	 * @throws ClienteNoAutorizadoException
 	 *             Si el cliente no es titular de esta cuenta
 	 */
-	public TarjetaDebito emitirTarjetaDebito(String nif)
-			throws ClienteNoEncontradoException,
-			ClienteNoAutorizadoException {
-		Optional<Cliente> optCliente =
-				Manager.getClienteDAO().findByNif(nif);
-		if (!optCliente.isPresent()) {
+	public TarjetaDebito emitirTarjetaDebito(String nif) throws ClienteNoEncontradoException, ClienteNoAutorizadoException {
+		Optional<Cliente> optCliente = Manager.getClienteDAO().findByNif(nif);
+		if (!optCliente.isPresent())
 			throw new ClienteNoEncontradoException(nif);
-		}
 		Cliente cliente = optCliente.get();
 		boolean encontrado = false;
-		for (Cliente titular : this.titulares) {
+		for (Cliente titular : this.titulares)
 			if (titular.getNif().equals(cliente.nif)) {
 				encontrado = true;
 				break;
 			}
-		}
-		if (!encontrado) {
+		if (!encontrado)
 			throw new ClienteNoAutorizadoException(nif, this.id);
-		}
 		TarjetaDebito tarjeta = new TarjetaDebito();
 		tarjeta.setCuenta(this);
 		tarjeta.setTitular(cliente);
@@ -237,25 +231,19 @@ public class Cuenta {
 	 * @throws ClienteNoAutorizadoException
 	 *             Si el cliente no es titular de esta cuenta
 	 */
-	public TarjetaCredito emitirTarjetaCredito(String nif, double credito)
-			throws ClienteNoEncontradoException,
-			ClienteNoAutorizadoException {
-		Optional<Cliente> optCliente =
-				Manager.getClienteDAO().findByNif(nif);
-		if (!optCliente.isPresent()) {
+	public TarjetaCredito emitirTarjetaCredito(String nif, double credito) throws ClienteNoEncontradoException, ClienteNoAutorizadoException {
+		Optional<Cliente> optCliente = Manager.getClienteDAO().findByNif(nif);
+		if (!optCliente.isPresent())
 			throw new ClienteNoEncontradoException(nif);
-		}
 		Cliente cliente = optCliente.get();
 		boolean encontrado = false;
-		for (Cliente titular : this.titulares) {
+		for (Cliente titular : this.titulares)
 			if (titular.getNif().equals(cliente.nif)) {
 				encontrado = true;
 				break;
 			}
-		}
-		if (!encontrado) {
+		if (!encontrado)
 			throw new ClienteNoAutorizadoException(nif, this.id);
-		}
 		TarjetaCredito tarjeta = new TarjetaCredito();
 		tarjeta.setCuenta(this);
 		tarjeta.setTitular(cliente);
