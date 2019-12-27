@@ -37,7 +37,8 @@ public class Cliente {
         return id;
     }
 
-    public void setId(Long id) {
+
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -45,7 +46,8 @@ public class Cliente {
         return nif;
     }
 
-    public void setNif(String nif) {
+
+    public void setNif(final String nif) {
         this.nif = nif;
     }
 
@@ -53,7 +55,7 @@ public class Cliente {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(final String nombre) {
         this.nombre = nombre;
     }
 
@@ -61,13 +63,11 @@ public class Cliente {
         return apellidos;
     }
 
-    public void setApellidos(String apellidos) {
+
+    public void setApellidos(final String apellidos) {
         this.apellidos = apellidos;
     }
 
-    /**
-     * Inserta un cliente en la base de datos
-     */
     public void insert() {
         Manager.getClienteDAO().save(this);
     }

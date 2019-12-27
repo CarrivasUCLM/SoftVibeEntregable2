@@ -11,11 +11,12 @@ import edu.uclm.esi.iso2.banco20193capas.dao.TarjetaCreditoDAO;
 import edu.uclm.esi.iso2.banco20193capas.dao.TarjetaDebitoDAO;
 
 /**
- * El Manager da acceso a las clases DAO asociadas a las clases de dominio
+ * El Manager da acceso a las clases DAO asociadas a las clases de dominio.
  *
  */
 @Component
-public class Manager {
+
+public final class Manager {
     private static CuentaDAO cuentaDAO;
     private static MovimientoCuentaDAO movimientoDAO;
     private static MovimientoTarjetaCreditoDAO movimientoTarjetaCreditoDAO;
@@ -27,10 +28,12 @@ public class Manager {
     }
 
     @Autowired
-    private void loadDAO(CuentaDAO cuentaDao, MovimientoCuentaDAO movimientoDao,
-            ClienteDAO clienteDAO, MovimientoTarjetaCreditoDAO movimientoTCDAO,
-            TarjetaDebitoDAO tarjetaDebitoDAO,
-            TarjetaCreditoDAO tarjetaCreditoDAO) {
+    private void loadDAO(final CuentaDAO cuentaDao,
+            final MovimientoCuentaDAO movimientoDao,
+            final ClienteDAO clienteDAO,
+            final MovimientoTarjetaCreditoDAO movimientoTCDAO,
+            final TarjetaDebitoDAO tarjetaDebitoDAO,
+            final TarjetaCreditoDAO tarjetaCreditoDAO) {
         Manager.cuentaDAO = cuentaDao;
         Manager.movimientoDAO = movimientoDao;
         Manager.clienteDAO = clienteDAO;
